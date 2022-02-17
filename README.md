@@ -1,6 +1,6 @@
 # Teste Promobit
 
-[Desafio de lógica da promobit](https://github.com/Promobit/teste-cadastro-produtos)!
+[Desafio de lógica da promobit](https://github.com/Promobit/teste-logica)!
 - [Teste Promobit](#teste-promobit)
     - [Descrição](#descrição)
     - [Como funciona este repositório?](#como-funciona-este-repositório)
