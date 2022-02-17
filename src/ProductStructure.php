@@ -26,26 +26,20 @@ class ProductStructure
             $posicao = strpos($product,'-');
             $tipo = substr($product,0,$posicao);
             $tamanho = substr($product,$posicao+1);
-            if (in_array($tipo, $produto)) {
-                if (in_array($tamanho, $produto[$tipo])) {
-                    $produto[$tipo][$tamanho]++;
+            if (array_key_exists($tipo, $produto)) {
+                if (array_key_exists($tamanho, $produto[$tipo])) {
+                    ++$produto[$tipo][$tamanho];
                 } else{
                     $produto[$tipo][$tamanho] = 1;
                 }            
             } else {
-                $produto[$tipo] = $tamanho;
-                if (in_array($tamanho, $produto[$tipo])) {
-                    $produto[$tipo][$tamanho]++;
-                } else{
-                    $produto[$tipo][$tamanho] = 1;
-                }
-                
-            }
-           
-                   
-        }  
+                $produto[$tipo][$tamanho] = 1;                
+            }            
+		}
+        return $produto;
+    }  
 
             
-        return [];
-    }
+        
+    
 }
