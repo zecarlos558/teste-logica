@@ -23,17 +23,17 @@ class ProductStructure
                     
         $produto = array();
         foreach (products as $key => $product) {
-            $posicao = strpos($product,'-');
-            $tipo = substr($product,0,$posicao);
-            $tamanho = substr($product,$posicao+1);
-            if (array_key_exists($tipo, $produto)) {
-                if (array_key_exists($tamanho, $produto[$tipo])) {
-                    ++$produto[$tipo][$tamanho];
+            $posicao = strpos($product,'-'); 
+            $cor = substr($product,0,$posicao); // Captura a cor da roupa (preto, branco, etc)
+            $tipo = substr($product,$posicao+1); // Captura o tipo da roupa (PP, GG, etc)
+            if (array_key_exists($cor, $produto)) {
+                if (array_key_exists($tipo, $produto[$cor])) {
+                    ++$produto[$cor][$tipo];
                 } else{
-                    $produto[$tipo][$tamanho] = 1;
+                    $produto[$cor][$tipo] = 1;
                 }            
             } else {
-                $produto[$tipo][$tamanho] = 1;                
+                $produto[$cor][$tipo] = 1;                
             }            
 		}
         return $produto;
